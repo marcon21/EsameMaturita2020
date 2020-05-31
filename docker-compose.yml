@@ -1,0 +1,27 @@
+version: "3"
+services:
+  # POSTGRES instance
+  db:
+    container_name: "db_lista_nozze"
+    build: "./db_setup/"
+    volumes:
+      - ./db_files:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: "1234"
+      POSTGRES_USER: "admin"
+      POSTGRES_DB: "l_nozze"
+
+  pgadmin:
+    container_name: "pgadmin_lista_nozze"
+    image: dpage/pgadmin4:4.15
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: 1234
+    depends_on:
+      - db
+    ports:
+      - "5050:80"
+    logging:
+      driver: none
