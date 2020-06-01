@@ -1,9 +1,10 @@
 from flask import Flask, request, redirect, send_from_directory, render_template, g
 import pugsql
+import json
 
 app = Flask(__name__)
 queries = pugsql.module('./queries')
-queries.connect('postgres://admin:1234@localhost:5432/l_nozze')
+queries.connect('postgres://admin:1234@localhost:5435/l_nozze')
 
 
 @app.route('/')
@@ -26,9 +27,11 @@ def send_css(path):
     return send_from_directory('css', path)
 
 
-@app.route('/api/')
-def send_css(path):
-    return send_from_directory('css', path)
+@app.route('/home')
+def home():
+    article_list = [p for p in queries.getListbyWedding(w_id=1)]
+    s = '<br>'.join([str(a) for a in article_list])
+    return s
 
 
 if __name__ == "__main__":
