@@ -1,1 +1,3 @@
 db_files/
+flask/__pycache__
+flask/modules/__pycache__

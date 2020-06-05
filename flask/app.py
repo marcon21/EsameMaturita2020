@@ -1,12 +1,13 @@
-from flask import Flask, request, redirect, send_from_directory, render_template, g
-import pugsql
-import json
+from flask import Flask, redirect, send_from_directory, render_template
+from modules.db import queries, db
+from modules.weddings import bp as weddingsbp
+from modules.weddinglist import bp as weddinglistbp
 
 app = Flask(__name__)
-queries = pugsql.module('./queries')
-queries.connect('postgres://admin:1234@localhost:5435/l_nozze')
+app.register_blueprint(weddingsbp)
+app.register_blueprint(weddinglistbp)
 
-
+# redirect to the home page
 @app.route('/')
 def root():
     return redirect("/home")
@@ -29,9 +30,7 @@ def send_css(path):
 
 @app.route('/home')
 def home():
-    article_list = [p for p in queries.getListbyWedding(w_id=1)]
-    s = '<br>'.join([str(a) for a in article_list])
-    return s
+    return render_template('home.html')
 
 
 if __name__ == "__main__":
