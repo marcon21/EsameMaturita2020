@@ -21,3 +21,6 @@ INSERT INTO public.BridalRegistry (wedding, article) VALUES
     (1, 4),
     (1, 5),
     (1, 6);
+
+UPDATE BridalRegistry SET purchased = TRUE WHERE wedding = 1 AND article = 2;
+UPDATE BridalRegistry SET purchased = TRUE WHERE wedding = 1 AND article = 3;

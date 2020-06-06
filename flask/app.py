@@ -27,6 +27,11 @@ def send_js(path):
 def send_css(path):
     return send_from_directory('css', path)
 
+# send favicon.ico
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory('./', 'favicon.ico', mimetype='image/vnd.microsoft.icon')
+
 
 @app.route('/home')
 def home():

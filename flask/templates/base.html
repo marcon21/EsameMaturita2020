@@ -7,19 +7,19 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-    <!-- <link rel="stylesheet" href="/css/style.css"> -->
+    <link rel="stylesheet" href="/css/style.css">
 
     <title>Home Page</title>
 </head>
 
 <body>
 
-    <head>{% block page_head %}{% endblock page_head %}</head>
-    <main>
+    <head>
         <nav class="navbar navbar-light bg-light">
             <span class="navbar-brand mb-0 h1">Navbar</span>
         </nav>
-
+    </head>
+    <main>
         <div class="container">{% block page_content %}{% endblock page_content %}</div>
     </main>
 
