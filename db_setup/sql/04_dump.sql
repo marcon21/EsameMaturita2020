@@ -1,9 +1,28 @@
 INSERT INTO public.People (name, surname, phone) VALUES 
-    ('Daniel', 'Marcon', '393344556677'), 
-    ('Daniela', 'Marcona', '394455667788');
+    ('Milo', 'Alfonsi', '272691439301'),
+    ('Rocco', 'Franscini', '060869438780'),
+    ('Raffaele', 'Camiscione', '144912681515'),
+    ('Piergiorgio', 'Duse', '675919282097'),
+    ('Benedetto', 'Mattarella', '689645562064'),
+    ('Romeo', 'Vismara', '127469163912'),
+    ('Ottavio', 'Gemito', '472759276358'),
+    ('Gian', 'Mercadante', '157709760123'),
+    ('Federico', 'Cavalcanti', '246606049017'),
+    ('Ivan', 'Salvini', '900722369668'),
+    ('Mariana', 'Vento', '759207550450'),
+    ('Marta', 'Parmitano', '758379187142'),
+    ('Monica', 'Pizzo', '984144561791'),
+    ('Gabriella', 'Mazzini', '132080795107'),
+    ('Barbara', 'Venturi', '383385809000'),
+    ('Antonietta', 'Boccioni', '567155212439'),
+    ('Isa', 'Tolentino', '795542573277'),
+    ('Amalia', 'Jacuzzi', '162436899661'),
+    ('Antonia', 'Lerner', '531690221799'),
+    ('Vincenza', 'Franceschi', '968833135247');
 
 INSERT INTO public.Weddings (partner1, partner2) VALUES 
-    ('1', '2');
+    ('1', '11'),('2', '12'),('3', '13'),('4', '14'),('5', '15'),
+    ('6', '16'),('7', '17'),('8', '18'),('9', '19'),('10', '20');
 
 INSERT INTO public.Articles (name, description, price) VALUES 
     ('Robot Roomba', 'Robot per la pulizia di casa', '199.99'),

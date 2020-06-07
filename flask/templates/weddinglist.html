@@ -11,29 +11,30 @@
         <p>Il prodotto {{ page.article_bought.articleinfo[0] }} é stato prenotato al prezzo di
             {{ page.article_bought.articleinfo[2] }}€</p>
         <hr>
-        <p class="mb-0">Ricordati di passare in negozio per ritirare ilgi
-            {% else %}
-            <div class="alert alert-danger" role="alert">
-                <h4 class="alert-heading">Oops! C'é stato un errore durante l'acquisto di
-                    {{ page.article_bought.articleinfo[0] }}</h4>
-                <p>Il prodotto potrebbe non essere piú disponibile per l'acquisto, ci dispiace per l'inconveniente.</p>
-            </div>
-            {% endif %}
+        <p class="mb-0">Ricordati di passare in negozio per ritirare il prodotto appena prenotato</p>
+    </div>
+    {% else %}
+    <div class="alert alert-danger" role="alert">
+        <h4 class="alert-heading">Oops! C'é stato un errore durante l'acquisto di
+            {{ page.article_bought.articleinfo[0] }}</h4>
+        <p>Il prodotto potrebbe non essere piú disponibile per l'acquisto, ci dispiace per l'inconveniente.</p>
     </div>
     {% endif %}
+</div>
+{% endif %}
 
-    <div class="row mt-4">
-        {% for a in page.articles %}
-        <div class="col-sm-3 mb-3">
-            <div class="card h-100 border-primary">
-                <div class="card-body text-center d-flex flex-column">
-                    <h5 class="card-title">{{ a[0] }}</h5>
-                    <p class="card-text">{{ a[1] }}</p>
-                    <div class="mt-auto">
-                        <p class="card-text">{{ a[2] }}€</p>
-                        <form action="?" method="post">
-                            <input type="hidden" id="articleid" name="articleid" value={{ a[4] }}>
-                            <button type="submit" class="btn btn-primary" {% if a[3] %} disabled {% endif %} ">{% if a[3] %}
+<div class="row mt-4">
+    {% for a in page.articles %}
+    <div class="col-sm-3 mb-3">
+        <div class="card h-100 border-primary">
+            <div class="card-body text-center d-flex flex-column">
+                <h5 class="card-title">{{ a[0] }}</h5>
+                <p class="card-text">{{ a[1] }}</p>
+                <div class="mt-auto">
+                    <p class="card-text">{{ a[2] }}€</p>
+                    <form action="?" method="post">
+                        <input type="hidden" id="articleid" name="articleid" value={{ a[4] }}>
+                        <button type="submit" class="btn btn-primary" {% if a[3] %} disabled {% endif %} ">{% if a[3] %}
                         Prodotto gia
                         prenotato {% else %}
                         Prenota l'acquisto!

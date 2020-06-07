@@ -5,13 +5,17 @@ bp = Blueprint('weddinglist', __name__)
 
 
 @bp.route('/weddinglist/<wedding_id>', methods=['GET', 'POST'])
-def weddings(wedding_id):
+def weddinglist(wedding_id):
     page = {}
     if request.method == 'POST':
         try:
             with queries.transaction(db) as q:
-                q.buyArticle(w_id=wedding_id,
-                             a_id=request.form['articleid'])
+                if not q.isArticleBought(w_id=wedding_id,
+                                         a_id=request.form['articleid'])[0]:
+                    q.buyArticle(w_id=wedding_id,
+                                 a_id=request.form['articleid'])
+                else:
+                    raise Exception()
 
             page['article_bought'] = {'status': True}
         except:
