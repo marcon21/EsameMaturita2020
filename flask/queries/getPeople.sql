@@ -1,2 +1,2 @@
 -- :name getPeople :many
-SELECT * FROM People
+SELECT * FROM People ORDER BY name

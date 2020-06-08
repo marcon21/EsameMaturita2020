@@ -2,10 +2,12 @@ from flask import Flask, redirect, send_from_directory, render_template
 from modules.db import queries, db
 from modules.weddings import bp as weddingsbp
 from modules.weddinglist import bp as weddinglistbp
+from modules.people import bp as peoplebp
 
 app = Flask(__name__)
 app.register_blueprint(weddingsbp)
 app.register_blueprint(weddinglistbp)
+app.register_blueprint(peoplebp)
 
 # redirect to the home page
 @app.route('/')

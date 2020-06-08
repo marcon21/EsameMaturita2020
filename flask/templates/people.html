@@ -6,18 +6,12 @@
     <div class="row">
         <div class="col-8">
             <input type="text" class="form-control" id="searchField" onkeyup="search()"
-                placeholder="Cerca lo sposo.." />
+                placeholder="Cerca l'utente.." />
         </div>
         <div class="col-2">
-            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalForm"
-                onclick="getPeople()">
-                Nuovo Matrimonio
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalForm">
+                Nuovo Utente
             </button>
-        </div>
-        <div class="col-2">
-            <a class="btn btn-primary" href="/people">
-                Nuovo Sposo
-            </a>
         </div>
     </div>
 
@@ -26,7 +20,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="ModalLabel">
-                        Inserisci un nuovo matrimonio
+                        Inserisci un nuovo utente
                     </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -34,9 +28,13 @@
                 </div>
 
                 <form action="?" method="post">
-                    <div class="modal-body">
-                        <select id="select1" data-live-search="true" multiple data-max-options="2" data-width="100%">
-                        </select>
+
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Nome e Cognome</span>
+                        </div>
+                        <input type="text" aria-label="First name" class="form-control">
+                        <input type="text" aria-label="Last name" class="form-control">
                     </div>
 
                     <div class="modal-footer">
@@ -50,8 +48,8 @@
     <table class="table table-bordered table-hover mt-3" id="weddingsTable">
         <thead class="thead-dark">
             <tr>
-                <th scope="col">Sposo 1</th>
-                <th scope="col">Sposo 2</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Cognome</th>
             </tr>
         </thead>
 
@@ -66,13 +64,6 @@
     </table>
 </div>
 <script>
-    $(document).ready(function () {
-        $(document).on("click", "tr.clickable", function () {
-            var weddingId = $(this).attr("data-wedding-id");
-            window.location.href = `/weddinglist/${weddingId}`;
-        });
-    });
-
     function search() {
         let input = document.getElementById("searchField");
         let filter = input.value.toUpperCase();
@@ -93,32 +84,6 @@
                 }
             }
         }
-    }
-
-    function getPeople() {
-        let select1 = document.getElementById("select1");
-        let select2 = document.getElementById("select2");
-
-        var request = new XMLHttpRequest();
-
-        request.open("GET", "/api/people", true);
-        request.onload = function () {
-            let data = JSON.parse(this.response);
-            if (request.status >= 200 && request.status < 400) {
-                data["people"].forEach((p) => {
-                    console.log(p);
-                    let option = document.createElement("option");
-                    option.text = p[1] + " " + p[2];
-                    select1.add(option);
-                });
-                $("#select1").trigger("change", true);
-                $("select").selectpicker();
-            } else {
-                console.log("error");
-            }
-        };
-
-        request.send();
     }
 </script>
 

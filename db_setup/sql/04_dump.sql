@@ -21,14 +21,13 @@ INSERT INTO public.People (name, surname, phone) VALUES
     ('Vincenza', 'Franceschi', '968833135247');
 
 INSERT INTO public.Weddings (partner1, partner2) VALUES 
-    ('1', '11'),('2', '12'),('3', '13'),('4', '14'),('5', '15'),
-    ('6', '16'),('7', '17'),('8', '18'),('9', '19'),('10', '20');
+    ('1', '11'),('2', '12'),('3', '13'),('4', '14'),('5', '15');
 
 INSERT INTO public.Articles (name, description, price) VALUES 
     ('Robot Roomba', 'Robot per la pulizia di casa', '199.99'),
     ('Trapunta', 'Trapunta matrimaniale invernale', '99.99'),
     ('Set Posate', 'Set posate in  24px', '59.90'),
-    ('Nespresso', 'Macchina caffe espresso a cialdi di Nespresso', '54.99'),
+    ('Nespresso', 'Macchina caffe espresso a cialde, what else?', '54.99'),
     ('Set Bicchieri', 'Set Bicchieri in cristallo', '49.99'),
     ('Forno Micoonde', 'Forno Microonde Samson', '89.99'),
     ('Set Pentole', 'Set pentole in ceramica', '199.99');
@@ -39,7 +38,13 @@ INSERT INTO public.BridalRegistry (wedding, article) VALUES
     (1, 3),
     (1, 4),
     (1, 5),
-    (1, 6);
+    (1, 6),  
+    (2, 2),
+    (2, 3),
+    (2, 4),
+    (2, 5),
+    (2, 6)
+    (2, 7);
 
 UPDATE BridalRegistry SET purchased = TRUE WHERE wedding = 1 AND article = 2;
 UPDATE BridalRegistry SET purchased = TRUE WHERE wedding = 1 AND article = 3;
