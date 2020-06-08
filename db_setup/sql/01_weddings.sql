@@ -2,6 +2,7 @@ CREATE TABLE public.Weddings (
     "id" SERIAL NOT NULL,
     "partner1" INT NOT NULL,
     "partner2" INT NOT NULL,
+    "date" TIMESTAMP DEFAULT now(),
 
     PRIMARY KEY ("id"),
     FOREIGN KEY ("partner1") REFERENCES public.People ("id")

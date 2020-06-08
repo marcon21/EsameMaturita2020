@@ -24,8 +24,14 @@
 {% endif %}
 
 <div class="row mt-4">
+    <div class="col-12 mb-3 text-center">
+        <h1>Questa é la lista di nozze di {{ page.partners[0][0] + " e " + page.partners[1][0] }}!!</h1>
+    </div>
+    <div class="col-12 mb-3 text-center">
+        <h4>Prenota uno dei seguenti regali e passa da noi a ritirarlo in negozio.</h1>
+    </div>
     {% for a in page.articles %}
-    <div class="col-sm-3 mb-3">
+    <div class="col-3 mb-3">
         <div class="card h-100 border-primary">
             <div class="card-body text-center d-flex flex-column">
                 <h5 class="card-title">{{ a[0] }}</h5>

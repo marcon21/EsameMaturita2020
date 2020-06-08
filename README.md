@@ -4,6 +4,6 @@
 - [ ] Home page
 - [x] Pagina per la lista nozze (per end user)
 - [x] Pagina che mostra tutti i matrimoni
-  - [ ] Creazione di un matrimonio nuovo
+  - [x] Creazione di un matrimonio nuovo
 - [ ] Pagina per modifica lista nozze
-- [ ] Creazione di nuovi utenti
+- [x] Creazione di nuovi utenti
