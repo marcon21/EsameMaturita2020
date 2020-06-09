@@ -35,24 +35,34 @@ def weddinglist(wedding_id):
 def weddinglistedit(wedding_id):
     page = {}
     if request.method == 'POST':
+        page['transaction_stutaus'] = True
         try:
             with queries.transaction(db) as q:
-                if not q.isArticleBought(w_id=wedding_id,
-                                         a_id=request.form['articleid'])[0]:
-                    q.buyArticle(w_id=wedding_id,
-                                 a_id=request.form['articleid'])
+                if request.form['action'] == 'remove':
+                    q.removeItemFromWedding(
+                        w_id=wedding_id, a_id=request.form['itemid'])
+                elif request.form['action'] == 'add':
+                    print(request.form['itemid'], type(request.form['itemid']))
+                    q.addItemToWedding(
+                        w_id=wedding_id, a_id=request.form['itemid'])
                 else:
-                    raise Exception()
+                    page['transaction_status'] = False
 
-            page['article_bought'] = {'status': True}
         except Exception as e:
             print(e)
-            page['article_bought'] = {'status': False}
-
-        page['article_bought']['articleinfo'] = queries.getArticleById(
-            db, a_id=request.form['articleid'])
+            page['transaction_status'] = False
 
     page['partners'] = list(queries.getPartnerByWedding(db, w_id=wedding_id))
-    page['articles'] = list(queries.getListbyWedding(db, w_id=wedding_id))
+    page['boughtArticles'] = list(
+        queries.getListbyWeddingOrderID(db, w_id=wedding_id))
+    page['availableArticles'] = []
 
-    return render_template('weddinglist.html', page=page)
+    allArticles = queries.getArticles(db)
+    boughtArticlesID = list(
+        map(lambda x: x[4], page['boughtArticles']))
+
+    for a in allArticles:
+        if a[0] not in boughtArticlesID:
+            page['availableArticles'].append(a)
+
+    return render_template('editweddinglist.html', page=page)

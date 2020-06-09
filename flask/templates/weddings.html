@@ -69,6 +69,7 @@
                 <th scope="col">Sposo 1</th>
                 <th scope="col">Sposo 2</th>
                 <th scope="col">Anno/Mese</th>
+                <th scope="col">Edit</th>
             </tr>
         </thead>
 
@@ -78,6 +79,9 @@
                 <td>{{ w[1] }} {{ w[2] }}</td>
                 <td>{{ w[3] }} {{ w[4] }}</td>
                 <td>{{ (w[5]|string)[:4] + "/" + (w[5]|string)[5:7] }}</td>
+                <td>
+                    <a class="btn btn-sq-xs btn-danger" href="/weddinglist/{{ w[0] }}/edit">Edit</a>
+                </td>
             </tr>
             {% endfor %}
         </tbody>
