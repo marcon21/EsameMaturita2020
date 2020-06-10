@@ -1,27 +1,30 @@
-INSERT INTO public.People (name, surname, phone, fiscalcode) VALUES 
-    ('Milo', 'Alfonsi', '272691439301', 'VHBRPN91E43B114Z'),
-    ('Rocco', 'Franscini', '060869438780', 'VCWLFY79S66L294T'),
-    ('Raffaele', 'Camiscione', '144912681515', 'PRJRGV81C10D530L'),
-    ('Piergiorgio', 'Duse', '675919282097', 'HFNHMN34B53D586M'),
-    ('Benedetto', 'Mattarella', '689645562064', 'XVKBDR74P64G674T'),
-    ('Romeo', 'Vismara', '127469163912', 'VMLCZT88C03D265G'),
-    ('Ottavio', 'Gemito', '472759276358', 'ZRPKKX27L30G234R'),
-    ('Gian', 'Mercadante', '157709760123', 'XCPYSM35D57G551N'),
-    ('Federico', 'Cavalcanti', '246606049017', 'WGFSVF37A10L169Z'),
-    ('Ivan', 'Salvini', '900722369668', 'YDPHBR85B12B553G'),
-    ('Mariana', 'Vento', '759207550450', 'HMFFWK77P01L814Q'),
-    ('Marta', 'Parmitano', '758379187142', 'CSRJMO94E27C914C'),
-    ('Monica', 'Pizzo', '984144561791', 'MPVYRN77S60H669Y'),
-    ('Gabriella', 'Mazzini', '132080795107', 'THVTLF64H30L784O'),
-    ('Barbara', 'Venturi', '383385809000', 'LLHHKM46A20E502Q'),
-    ('Antonietta', 'Boccioni', '567155212439', 'XHCPZX95C05H916E'),
-    ('Isa', 'Tolentino', '795542573277', 'NHSNDG97L58H094R'),
-    ('Amalia', 'Jacuzzi', '162436899661', 'GWVJWT27L05L624H'),
-    ('Antonia', 'Lerner', '531690221799', 'NDTBZN98S23Z115H'),
-    ('Vincenza', 'Franceschi', '968833135247', 'MLDGDV31L18G610V');
+INSERT INTO public.People (fiscalcode, name, surname, phone) VALUES 
+    ('VHBRPN91E43B114Z', 'Milo', 'Alfonsi', '272691439301'),
+    ('VCWLFY79S66L294T', 'Rocco', 'Franscini', '060869438780'),
+    ('PRJRGV81C10D530L', 'Raffaele', 'Camiscione', '144912681515'),
+    ('HFNHMN34B53D586M', 'Piergiorgio', 'Duse', '675919282097'),
+    ('XVKBDR74P64G674T', 'Benedetto', 'Mattarella', '689645562064'),
+    ('VMLCZT88C03D265G', 'Romeo', 'Vismara', '127469163912'),
+    ('ZRPKKX27L30G234R', 'Ottavio', 'Gemito', '472759276358'),
+    ('XCPYSM35D57G551N', 'Gian', 'Mercadante', '157709760123'),
+    ('WGFSVF37A10L169Z', 'Federico', 'Cavalcanti', '246606049017'),
+    ('YDPHBR85B12B553G', 'Ivan', 'Salvini', '900722369668'),
+    ('HMFFWK77P01L814Q', 'Mariana', 'Vento', '759207550450'),
+    ('CSRJMO94E27C914C', 'Marta', 'Parmitano', '758379187142'),
+    ('MPVYRN77S60H669Y', 'Monica', 'Pizzo', '984144561791'),
+    ('THVTLF64H30L784O', 'Gabriella', 'Mazzini', '132080795107'),
+    ('LLHHKM46A20E502Q', 'Barbara', 'Venturi', '383385809000'),
+    ('XHCPZX95C05H916E', 'Antonietta', 'Boccioni', '567155212439'),
+    ('NHSNDG97L58H094R', 'Isa', 'Tolentino', '795542573277'),
+    ('GWVJWT27L05L624H', 'Amalia', 'Jacuzzi', '162436899661'),
+    ('NDTBZN98S23Z115H', 'Antonia', 'Lerner', '531690221799'),
+    ('MLDGDV31L18G610V', 'Vincenza', 'Franceschi', '968833135247');
 
 INSERT INTO public.Weddings (partner1, partner2) VALUES 
-    ('1', '11'),('2', '12'),('3', '13'),('4', '14'),('5', '15');
+    ('VHBRPN91E43B114Z', 'MPVYRN77S60H669Y'),
+    ('NHSNDG97L58H094R', 'NDTBZN98S23Z115H'),
+    ('MLDGDV31L18G610V', 'VCWLFY79S66L294T'),
+    ('VHBRPN91E43B114Z', 'VMLCZT88C03D265G');
 
 INSERT INTO public.Articles (name, description, price) VALUES 
     ('Robot Roomba', 'Robot per la pulizia di casa', '199.99'),

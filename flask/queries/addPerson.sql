@@ -1,2 +1,2 @@
 -- :name addPerson :affected
-INSERT INTO People(name, surname, phone, fiscalcode) VALUES (:name, :surname, :phone, :fiscalcode)
+INSERT INTO People(fiscalcode, name, surname, phone) VALUES (:fiscalcode, :name, :surname, :phone)

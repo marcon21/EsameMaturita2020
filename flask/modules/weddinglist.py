@@ -13,7 +13,8 @@ def weddinglist(wedding_id):
                 if not q.isArticleBought(w_id=wedding_id,
                                          a_id=request.form['articleid'])[0]:
                     q.buyArticle(w_id=wedding_id,
-                                 a_id=request.form['articleid'])
+                                 a_id=request.form['articleid'],
+                                 buyer="Da implementare")
                 else:
                     raise Exception()
 

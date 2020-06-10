@@ -17,8 +17,11 @@
     </div>
     {% endif %}
 
+    <div class="text-center">
+        <h1>Matrimoni</h1>
+    </div>
 
-    <div class="row">
+    <div class="row mt-3">
         <div class="col-8">
             <input type="text" class="form-control" id="searchField" onkeyup="search()"
                 placeholder="Cerca lo sposo.." />
@@ -102,8 +105,8 @@
         let tr = table.getElementsByTagName("tr");
 
         for (let i = 0; i < tr.length; i++) {
-            let td = tr[i].getElementsByTagName("td")[1];
-            let td2 = tr[i].getElementsByTagName("td")[2];
+            let td = tr[i].getElementsByTagName("td")[0];
+            let td2 = tr[i].getElementsByTagName("td")[1];
             if (td) {
                 let txtValue =
                     (td.textContent || td.innerText) + (td2.textContent || td2.innerText);

@@ -2,6 +2,7 @@ CREATE TABLE public.BridalRegistry (
     "wedding" INT NOT NULL,
     "article" INT NOT NULL,
     "purchased" BOOLEAN DEFAULT FALSE,
+    "buyer" VARCHAR(255) DEFAULT NULL,
     
     PRIMARY KEY ("wedding", "article"),
     

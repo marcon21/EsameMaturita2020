@@ -85,8 +85,8 @@
                 <td>{{ w[1] }}</td>
                 <td>{{ w[2] }}</td>
                 <td>{{ w[3] }}</td>
-                <td>{{ w[4] }}</td>
-                <td>{{ (w[5]|string).split(" ")[0] }}</td>
+                <td>{{ w[0] }}</td>
+                <td>{{ (w[4]|string).split(" ")[0] }}</td>
             </tr>
             {% endfor %}
         </tbody>
@@ -103,9 +103,12 @@
         for (let i = 0; i < tr.length; i++) {
             let td = tr[i].getElementsByTagName("td")[0];
             let td2 = tr[i].getElementsByTagName("td")[1];
+            let td3 = tr[i].getElementsByTagName("td")[2];
+            let td4 = tr[i].getElementsByTagName("td")[3];
+
             if (td) {
                 let txtValue =
-                    (td.textContent || td.innerText) + (td2.textContent || td2.innerText);
+                    (td.textContent || td.innerText) + (td2.textContent || td2.innerText) + (td3.textContent || td3.innerText) + (td4.textContent || td4.innerText);
 
                 if (txtValue.toUpperCase().indexOf(filter) > -1) {
                     tr[i].style.display = "";
