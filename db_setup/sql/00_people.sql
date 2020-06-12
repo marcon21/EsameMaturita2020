@@ -6,3 +6,5 @@ CREATE TABLE public.People (
     "registrationDate" TIMESTAMP DEFAULT now(),
     PRIMARY KEY ("fiscalcode")
 );
+
+

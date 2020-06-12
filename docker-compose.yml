@@ -12,16 +12,15 @@ services:
       POSTGRES_PASSWORD: "1234"
       POSTGRES_USER: "admin"
       POSTGRES_DB: "l_nozze"
-
-  pgadmin:
-    container_name: "pgadmin_lista_nozze"
-    image: dpage/pgadmin4:4.15
-    environment:
-      PGADMIN_DEFAULT_EMAIL: admin@admin.com
-      PGADMIN_DEFAULT_PASSWORD: 1234
-    depends_on:
-      - db
-    ports:
-      - "5050:80"
-    logging:
-      driver: none
+  # pgadmin:
+  #   container_name: "pgadmin_lista_nozze"
+  #   image: dpage/pgadmin4:4.15
+  #   environment:
+  #     PGADMIN_DEFAULT_EMAIL: admin@admin.com
+  #     PGADMIN_DEFAULT_PASSWORD: 1234
+  #   depends_on:
+  #     - "db"
+  #   ports:
+  #     - "5050:80"
+  #   logging:
+  #     driver: none

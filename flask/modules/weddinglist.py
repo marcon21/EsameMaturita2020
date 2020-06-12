@@ -43,7 +43,7 @@ def weddinglistedit(wedding_id):
                     q.removeItemFromWedding(
                         w_id=wedding_id, a_id=request.form['itemid'])
                 elif request.form['action'] == 'add':
-                    print(request.form['itemid'], type(request.form['itemid']))
+                    # print(request.form['itemid'], type(request.form['itemid']))
                     q.addItemToWedding(
                         w_id=wedding_id, a_id=request.form['itemid'])
                 else:
