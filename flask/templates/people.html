@@ -1,6 +1,7 @@
 {% extends "base.html" %} {% block page_content %}
 <div class="mt-3">
     {% if page.addStatus is defined %}
+    <!-- Start banner about the transaction status -->
     <div class="mt-3 mb-3">
         {% if page.addStatus %}
         <div class="alert alert-success" role="alert">
@@ -12,20 +13,28 @@
         </div>
         {% endif %}
     </div>
+    <!-- End banner about the transaction status -->
     {% endif %}
 
     <div class="row">
+        <!-- Start of the searchbar -->
         <div class="col-10">
             <input type="text" class="form-control" id="searchField" onkeyup="search()"
                 placeholder="Cerca l'utente.." />
         </div>
+        <!-- End of the searchbar -->
+
+        <!-- Start of new user button -->
         <div class="col-2">
             <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalForm">
                 Nuovo Utente
             </button>
         </div>
+        <!-- End of new user button -->
+
     </div>
 
+    <!-- Start of the popup form -->
     <div class="modal fade" id="modalForm" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -67,7 +76,9 @@
             </div>
         </div>
     </div>
+    <!-- End of the popup form -->
 
+    <!-- Start table displaying the users -->
     <table class="table table-bordered table-hover mt-3" id="weddingsTable">
         <thead class="thead-dark">
             <tr>
@@ -91,9 +102,11 @@
             {% endfor %}
         </tbody>
     </table>
+    <!-- End table displaying the users -->
 </div>
 
 <script>
+    // Search function for the table
     function search() {
         let input = document.getElementById("searchField");
         let filter = input.value.toUpperCase();

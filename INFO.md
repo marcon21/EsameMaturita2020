@@ -1,0 +1,36 @@
+## Guida al progetto e alla struttura dei file
+
+---
+
+- `db_setup/`
+  - `Dockerfile`
+    - file di configurazione dell'immagine Docker di Postgres
+  - `sql/`
+    - cartella contente tutti i file di inizializzazione del database
+- `flask/`
+  - `css/`
+    - tutti i file sass e i rispettivi compilati
+  - `modules/`
+    - `db.py`
+      - file di configurazione del db
+    - `people.py`
+      - gestore delle root riguardanti le pagine ed api per le persone
+    - `weddinglist.py`
+      - gestore delle root riguardanti le pagine delle liste nozze
+    - `weddings.py`
+      - gestore delle root riguardanti la pagina dei matrimoni
+  - `queries/`
+    - cartella contente tutte le query necessarie
+  - `templates/`
+    - cartella con tutti i file template per il motore jinja2
+  - `static/`
+    - `favicon.ico`
+      - icona del sito
+  - `.env`
+    - file contente le variabili d'ambiente per la gestione del db
+  - `app.py`
+    - main file per il server flask
+  - `requirements.txt`
+    - requirements python del progetto
+- `docker-compose.yml`
+  - file di configurazione per docker-compose

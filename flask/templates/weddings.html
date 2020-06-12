@@ -4,6 +4,7 @@
 
 <div class="mt-3">
     {% if page.addStatus is defined %}
+    <!-- Start banner about the transaction status -->
     <div class="mt-3 mb-3">
         {% if page.addStatus %}
         <div class="alert alert-success" role="alert">
@@ -15,8 +16,10 @@
         </div>
         {% endif %}
     </div>
+    <!-- End banner about the transaction status -->
     {% endif %}
 
+    <!-- Start of the title -->
     <div class="text-center">
         <h1>Matrimoni</h1>
         <div class="row">
@@ -26,25 +29,33 @@
             </div>
         </div>
     </div>
+    <!-- End of the title -->
 
     <div class="row mt-3">
+        <!-- Start search bar -->
         <div class="col-8">
             <input type="text" class="form-control" id="searchField" onkeyup="search()"
                 placeholder="Cerca lo sposo.." />
         </div>
+        <!-- End search bar -->
+        <!-- Start new wedding button -->
         <div class="col-2">
             <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalForm"
                 onclick="getPeople()">
                 Nuovo Matrimonio
             </button>
         </div>
+        <!-- End new wedding button -->
+        <!-- Start new user button -->
         <div class="col-2">
             <a class="btn btn-primary" href="/people">
                 Nuovo Sposo
             </a>
         </div>
+        <!-- End new user button -->
     </div>
 
+    <!-- Start popup form -->
     <div class="modal fade" id="modalForm" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -71,7 +82,9 @@
             </div>
         </div>
     </div>
+    <!-- End popup form -->
 
+    <!-- Start Table of weddings -->
     <table class="table table-bordered table-hover mt-3" id="weddingsTable">
         <thead class="thead-dark">
             <tr>
@@ -84,6 +97,7 @@
 
         <tbody>
             {% for w in page.weddings %}
+            <!-- Start row -->
             <tr class="clickable" data-wedding-id="{{ w[0] }}">
                 <td>{{ w[1] }} {{ w[2] }}</td>
                 <td>{{ w[3] }} {{ w[4] }}</td>
@@ -92,11 +106,15 @@
                     <a class="btn btn-sq-xs btn-danger" href="/weddinglist/{{ w[0] }}/edit">Edit</a>
                 </td>
             </tr>
+            <!-- End row -->
             {% endfor %}
         </tbody>
     </table>
+    <!-- End Table of weddings -->
 </div>
+
 <script>
+    // Function for making every row clickable    
     $(document).ready(function () {
         $(document).on("click", "tr.clickable", function () {
             var weddingId = $(this).attr("data-wedding-id");
@@ -104,6 +122,7 @@
         });
     });
 
+    // Search function for the table
     function search() {
         let input = document.getElementById("searchField");
         let filter = input.value.toUpperCase();
@@ -126,6 +145,7 @@
         }
     }
 
+    // Function for loading only when needed the list of users
     function getPeople() {
         let select1 = document.getElementById("select1");
         let select2 = document.getElementById("select2");

@@ -3,6 +3,7 @@
 {% block page_content %}
 
 {% if page.article_bought is defined %}
+<!-- Start banner about the transaction status -->
 <div class="mt-3 mb-3">
     {% if page.article_bought.status %}
     <div class="alert alert-success" role="alert">
@@ -21,16 +22,20 @@
     </div>
     {% endif %}
 </div>
+<!-- End banner about the transaction status -->
 {% endif %}
 
 <div class="row mt-4">
+    <!-- Start of the titles -->
     <div class="col-12 mb-3 text-center">
         <h1>Questa é la lista di nozze di {{ page.partners[0][0] + " e " + page.partners[1][0] }}!!</h1>
     </div>
     <div class="col-12 mb-3 text-center">
         <h4>Prenota uno dei seguenti regali e passa da noi a ritirarlo in negozio.</h1>
     </div>
+    <!-- End of the titles -->
     {% for a in page.articles %}
+    <!-- Start of the card -->
     <div class="col-3 mb-3">
         <div class="card h-100 border-primary">
             <div class="card-body text-center d-flex flex-column">
@@ -50,6 +55,7 @@
             </div>
         </div>
     </div> 
+    <!-- End of the card -->
     {% endfor %}
 </div>
 {% endblock page_content %}
