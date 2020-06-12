@@ -34,7 +34,7 @@ Make sure to have already installed PostgreSQL 12 on your computer. Then run thi
 [sudo -u postgres] psql -c < cat db_setup/sql/*
 ```
 #### Important
-Make sure to update the right access credentials in the file `./flask/.env`
+#### Make sure to update the right access credentials in the file `./flask/.env`
 ---
 ## Setting up the python enviroment
 ### [OPTIONAL] Virtual enviroment
